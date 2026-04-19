@@ -345,4 +345,19 @@ footer {
     width: 60px;
 }
 
+.contact{
+    display: flex;
+    flex-direction: column;
+}
+
+.unContact{
+    align-self: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.unContact p{
+    padding: 0 1em 0;
+}
+
 
