@@ -22,7 +22,6 @@
 @font-face {
     font-family: dynalight;
     src: url(../Dynalight/Dynalight-Regular.ttf);
-    font-size: larger;
 }
 
 @font-face {
@@ -80,7 +79,6 @@ nav {
     width: auto;     /* Garde les proportions de l'image */
     display: block;  /* Enlève l'espace vide sous l'image */
     border: none;    /* Optionnel : retire la bordure si tu n'en veux plus */
-    align-self: left;
 }
 
 nav ul {
@@ -105,7 +103,6 @@ nav ul li a {
     font-weight: normal;
     display:grid;
     color : var(--font-color);
-    background-color: var(--bg-color);
     text-align: center;
     padding:0;
     margin: auto;
@@ -144,12 +141,36 @@ nav ul li a {
 }
 
 @media (max-width:470px){
+
+    .hero {
+        position: relative; /* Devient le repère pour le chrono */
+        display: flex;      /* Pour s'assurer que l'image centre bien */
+        flex-direction: column;
+    }
+
     .hero img{
         width:100%;
     }
 
+    .date h2{
+        text-align: center;
+    }
+
+    .date{
+        position: absolute; /* On le place par-dessus l'image */
+        top: 85%;           /* Centre verticalement */
+        left: 50%;          /* Centre horizontalement */
+        transform: translate(-50%, -50%); /* Ajustement parfait du centrage */
+        width: 90%;         /* Largeur du chrono sur l'image */
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 8px; /* Optionnel : adoucit les angles */
+        color:white;
+    }
+
     .countdown {
         grid-template-columns: repeat(4, 1fr);
+        color:inherit;
     }
 
     .time{
@@ -325,6 +346,57 @@ button{
     .content{
         font-size: var(--small-screen-small-font-size);
     }
+}
+
+/* Slideshow */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    height: 500px; /* À ajuster selon tes photos */
+    margin: auto;
+    overflow: hidden;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Tout est invisible par défaut */
+    transition: opacity 1.5s ease-in-out; /* Voilà le fondu entrant ET sortant */
+}  
+
+
+.slide img{
+    width:100%;
+    height:auto;
+    object-fit: cover;
+}
+
+/* La légende */
+.caption {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    font-size: 1.2rem;
+}
+
+.fade {
+    animation: fadeEffect 1.5s;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.0; }
+    to { opacity: 1; }
 }
 
 /* Footer */
