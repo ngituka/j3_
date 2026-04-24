@@ -1,3 +1,9 @@
+// On vérifie si une preuve de connexion existe dans le navigateur
+if (sessionStorage.getItem("access_granted") !== "true") {
+    // Si non, on redirige vers l'index immédiatement
+    window.location.href = "index.html";
+}
+
 function getTime(){
     let today = new Date();
     let wedding = new Date(2026,7,8,11,0,0);
@@ -39,11 +45,15 @@ function getTime(){
 setInterval(getTime, 1000);
 
 function toggleTheme(){
-    console.log("clic reçu !");
     x = document.querySelector(".content");
     if (x.style.maxHeight){
       x.style.maxHeight = null;
     } else {
       x.style.maxHeight = x.scrollHeight + "px";
     }
+}
+
+function copyText(el){
+    let text = el.innerText;
+    navigator.clipboard.writeText(text);
 }

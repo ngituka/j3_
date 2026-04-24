@@ -1,21 +1,45 @@
+let premiereErreur = true;
+const hashedCode = "b9ef9176f8e4ea146bf0b3ee9258b274a67dd21a3cea7d22b9de41841f0c3eed";
+
 document.addEventListener("DOMContentLoaded", (e)=>{
     const input = document.getElementById("password");
     const button = document.getElementById("submit");
     button.addEventListener("click", ()=>checkPassword(input));
 })
 
-function checkPassword(input){
+async function hashCode(message) {
+    // 1. Convertir le texte en unités de calcul (Uint8Array)
+    const msgUint8 = new TextEncoder().encode(message);                           
+    
+    // 2. Calculer le hash via l'API Web Crypto
+    const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);           
+
+    // 3. Convertir le résultat (ArrayBuffer) en tableau d'octets
+    const hashArray = Array.from(new Uint8Array(hashBuffer));                     
+
+    // 4. Transformer chaque octet en sa valeur hexadécimale (00 à ff)
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); 
+    
+    return hashHex;
+}
+
+async function checkPassword(input){
     console.log("clic reçu");
-    if (input.value == "0607"){
-        console.log("mdp ok");
-        window.location.replace("accueil.html");
+    if(input.value.length < 4) return;
+    let password = await hashCode(input.value);
+    if (password == hashedCode){
+        sessionStorage.setItem("access_granted", "true");
+        window.location.href = "accueil.html";
     }
     else{
         const section = input.parentElement;
         const text = document.createElement("p");
         text.innerText = "Le mot de passe est erroné.";
         text.className = "error";
-        section.appendChild(text);
+        if (premiereErreur){
+            section.appendChild(text);
+            premiereErreur = false;
+        }
     }
 }
 

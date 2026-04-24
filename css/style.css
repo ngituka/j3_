@@ -218,7 +218,7 @@ nav ul li a {
     height:auto;
 }
 
-h2 {
+h1, h2 {
     font-size: var(--bigger-text-size);
     font-weight: initial;
 }
@@ -264,6 +264,7 @@ button{
 @media (min-width:470px){
     h2, horaire{
         font-size:var(--small-screen-big-font-size);
+        text-align: center;
     }
 
     button{
@@ -289,11 +290,19 @@ button{
     }
 
     .event{
-        font-size:2vw; /*???*/
+        font-size:var(--small-screen-avg-font-size)
     }
 }
 
+.address{
+    text-decoration: underline;
+}
 
+@media (min-width:470px){
+    .address{
+        font-size:var(--small-screen-small-font-size);
+    }
+}
 
 
 
