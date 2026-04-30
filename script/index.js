@@ -44,12 +44,21 @@ function getTime(){
 }   
 setInterval(getTime, 1000);
 
-function toggleTheme(){
-    x = document.querySelector(".content");
-    if (x.style.maxHeight){
-      x.style.maxHeight = null;
+function toggleTheme(el){
+    let elID = el.id;
+    let collapsible;
+    if(elID == "tenue"){
+        collapsible = document.getElementById("tenueContent");
+    }
+    else{
+        collapsible = document.getElementById("cadeauxContent")
+    }
+    if (collapsible.style.maxHeight){
+      collapsible.style.maxHeight = null;
+      collapsible.style.paddingBottom = "0px";
     } else {
-      x.style.maxHeight = x.scrollHeight + "px";
+      collapsible.style.maxHeight = collapsible.scrollHeight + "px";
+      collapsible.style.paddingBottom = "1em";
     }
 }
 

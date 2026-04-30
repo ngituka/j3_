@@ -21,7 +21,7 @@ function showSlides() {
     slides[slideIndex - 1].classList.add("active");
 
     // On relance
-    setTimeout(showSlides, 4000); 
+    setTimeout(showSlides, 8000); 
 }
 
 showSlides();

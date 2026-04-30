@@ -55,7 +55,7 @@
         <div class="moments-grid">
             <div class="moment">
                 <img src="images/icons/dark-ring-icon.svg" alt="mairie">
-                <p class="horaire">11:30</p>
+                <p class="horaire">10:30</p>
                 <p class="event">Céremonie de mariage à la mairie</p>
                 <p class="address" title="clique pour copier l'adresse !" onclick="copyText(this)">65 avenue Gaston Vermeire, 95340 Persan</p>
             </div>
@@ -73,45 +73,67 @@
                 <p class="address" title="clique pour copier l'adresse !" onclick="copyText(this)">Rue de l'Ormetteau, 95610 Éragny</p>
             </div>
         </div>
-        <button class="infos collapsible" onclick="toggleTheme()">
-            Quelques informations importantes...
+    
+        </section>
+
+    <section class="infos container">
+        <h2 class="fancy">Plus d'infos</h2>
+        <button class="collapsible" id="tenue" onclick="toggleTheme(this)">
+            À propos des tenues...
         </button>
-        <div class="content">
-            <p>1. En tant que croyants témoins de Jéhovah, on accorde beaucoup 
+        <div class="content" id="tenueContent">
+            En tant que croyants témoins de Jéhovah, on accorde beaucoup 
             d'importance à l'institution divine qu'est le mariage. C'est pourquoi nous
             vous demandons de garder ceci à l'esprit lorsque vous choisirez votre tenue.
-            Restons dignes en évitant notamment des vêtements trop révelateurs.</p>
-            <p>2. Votre présence à nos côtés pour cette journée unique est le plus beau 
+            Restons dignes en évitant notamment des vêtements trop révelateurs.        
+        </div>
+        <button class="collapsible" id="cadeaux" onclick="toggleTheme(this)">
+            Pour ceux qui souhaitent faire des cadeaux
+        </button>
+        <div class="content" id="cadeauxContent">
+            Votre présence à nos côtés pour cette journée unique est le plus beau 
             des cadeaux. Étant déjà bien installés, nous ne souhaitons pas de cadeaux 
             matériels. Une urne sera mise à disposition pour celles et ceux qui 
-            souhaitent y déposer une enveloppe.</p>
+            souhaitent y déposer une enveloppe.    
         </div>
     </section>
 
     <section class="slideshow-container">
         <div class="slide active">
             <img src="./images/slideshow/j3-pic1.png" alt="Mariage 1">
-            <div class="caption fancy">Notre rencontre</div>
+            <div class="caption fancy">
+                Tout a commencé lors d'une réunion pour la prédication. <br>
+                Jean-Jacques a proposé à Jemimah un date, en précisant 
+                que ce n'en était pas un.
+            </div>
         </div>
 
         <div class="slide ">
             <img src="./images/slideshow/j3-pic2.png" alt="Mariage 2">
-            <div class="caption fancy">La demande</div>
+            <div class="caption fancy">
+                Et pourtant, c'est exactement là que tout a commencé.
+            </div>
         </div>
 
         <div class="slide ">
             <img src="./images/slideshow/j3-pic3.png" alt="Mariage 3">
-            <div class="caption fancy">Le grand jour</div>
+            <div class="caption fancy">
+                Puis le [insérer date], Jean-Jacques appelle en urgence
+                Jemimah pour un "problème de fuite d'eau"...
+            </div>
         </div>
 
         <div class="slide ">
             <img src="./images/slideshow/j3-pic5.png" alt="Mariage 3">
-            <div class="caption fancy">Le grand jour</div>
+            <div class="caption fancy">
+                Quelle ne fut pas sa surprise en arrivant : pétales de rose, notre chanson préférée...
+                Vous l'aurez compris : 
+            </div>
         </div>
 
         <div class="slide ">
             <img src="./images/slideshow/j3-pic7.png" alt="Mariage 3">
-            <div class="caption fancy">Le grand jour</div>
+            <div class="caption fancy">C'était sa demande.</div>
         </div>
     </section>
 
@@ -119,8 +141,8 @@
         <img src="images/logo.svg" alt="logo" class="logo-footer">
         <div class="contact">
             <p>Contacter :</p>
-            <p>Jean-Jacques : 06 50 05 62 77</p>
-            <p>Jemimah : 06 95 50 04 61</p>
+            <p>Josiane NGOY : 07 81 93 54 69</p>
+            <p>David BADILA : 06 14 68 82 01</p>
         </div>
     </footer>
 

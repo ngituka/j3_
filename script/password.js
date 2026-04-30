@@ -1,5 +1,5 @@
 let premiereErreur = true;
-const hashedCode = "b9ef9176f8e4ea146bf0b3ee9258b274a67dd21a3cea7d22b9de41841f0c3eed";
+const hashedCode = "3ccea2709a37bffe05a833dc09c4ba2c7571a853db13b5885aa59611924511bc";
 
 document.addEventListener("DOMContentLoaded", (e)=>{
     const input = document.getElementById("password");
